@@ -1,0 +1,60 @@
+  <div id="container">
+      <div class="jumbotron" style="background-color: #fa8072 ; color: white; border-radius: 6px;">
+        <h1 class="text-center">
+          <strong>
+            <i class="fa fa-newspaper-o"></i> Note Scraper
+          </strong>
+        </h1>
+        <button onclick="location.href='/scrape'" type="button" id="scrape" class="btn btn-primary">Scrape now!</button>
+        <button type="button" id="saved" class="btn btn-primary">Saved Articles!</button>
+      </div>
+      
+  </div>
+
+  <div class="container">
+
+    <table>
+        <tbody>
+
+            {{#each articles}}
+            <div class=row>
+                <br><hr class="between" />
+                <div class="col-md-6">
+                  <div class="panel panel-default">
+                    <div class="panel-heading"><a href="{{this.link}}" class="collection-item blue-text" target="_blank">{{this.title}}</a></div>
+                  </div>                   
+                </div>
+                <div class="col-md-6">
+                    <button class="noteButton waves-effect waves-light btn-flat blue" id="{{this._id}}">Add Note</button>
+                    <br><br>
+                    <button class="saveButton waves-effect waves-light btn-flat blue" id="{{this._id}}">Save</button>
+                </div>
+
+            </div>
+            {{/each}}
+
+        </tbody>
+    </table>
+
+</div>
+
+
+<!-- Note modal -->
+<div id="noteModal" class="modal modal-fixed-footer">
+
+    <div class="modal-content">
+        <p>Notes</p>
+        <ul class="messages collection"></ul>
+    </div>
+    
+    <div class="modal-footer">
+        <form name="noteForm" id="noteForm">
+                    <input required placeholder="Enter a note here" type="text" name="noteText" id="noteText">
+            <button class="btn green left" type="submit" id="noteButton">
+                Post Note!
+            </button>
+            <a href="/" class="modal-action modal-close waves-effect waves-light btn-flat">Close</a>
+        </form>
+    </div>
+
+</div>
