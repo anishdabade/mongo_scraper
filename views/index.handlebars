@@ -43,14 +43,13 @@
       <div class="thumbnail">
         <a target="_blank" href={{this.link}}><img src="{{this.image}}" /></a>
         <div class="caption">
-          <h3><a target="_blank" href={{this.link}}></a>{{this.title}}</h3>
+          <a target="_blank" href={{this.link}}><h3>{{this.title}}</h3></a>
           <form method="POST" action="/">
             <input type="hidden" name="title" value="{{this.title}}">
             <input type="hidden" name="link" value="{{this.link}}">
             <input type="hidden" name="image" value="{{this.image}}">
             <br>
             <button class="btn btn-info" data-loading-text="<i class='fa fa-spinner fa-spin'></i>Saving" type="submit">Save</button>
-            <button class="btn btn-info" data-loading-text="<i class='fa fa-spinner fa-spin'></i>Retrieving" type="submit" onclick="window.open({{this.link}})">Get Article</button>
           </form>
         </div>
       </div>
