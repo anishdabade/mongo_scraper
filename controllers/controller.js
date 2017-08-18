@@ -12,9 +12,13 @@ var request = require("request");
 // Use native promises
 mongoose.Promise = global.Promise;
 
-mongoose.connect("mongodb://localhost/mongo_scraper");
-
+if(process.env.NODE_ENV == "production"){
+    mongoose.connect("mongodb://<dbuser>:<dbpassword>@ds149353.mlab.com:49353/heroku_56vlr88t")
+} else{
+    mongoose.connect("mongodb://localhost/mongo_scraper");
+}
 var db = mongoose.connection;
+
 
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
