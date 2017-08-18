@@ -1,4 +1,4 @@
-# :newspaper: The Fluffington Post :panda_face: :hamster: :dog:
+# :newspaper: The New York Times!
 A Cheerio/Mongoose/Express News Scraper that delivers only the fluffiest news to your screen.
 
 ## Table of Contents
@@ -8,24 +8,23 @@ A Cheerio/Mongoose/Express News Scraper that delivers only the fluffiest news to
 - [Comments](#comments)
 
 ## Home Page
-* Scrape new articles from The Huffington Post Cute-Animal News
-* Click image to read the full article
+* Scrape new articles from The New York Times
 * Save Scraped Articles
 
-![home page](public/img/home-screen.png?raw=true "Home Page")
+
 
 ## Saved Articles
 * View your saved articles
 * Delete articles you don't like, and scrape some more!
 
 
-![saved articles](/public/img/saved-articles.png?raw=true "Saved Articles")
+
 
 ## Comments
 * Make comments and read the comments of others
 * Delete comments if you wish
 
-![comments](/public/img/comment-modal.png?raw=true "Comments")
+
 
 
 ## Dependencies and Technologies
