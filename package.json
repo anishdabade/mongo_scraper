@@ -1,28 +1,31 @@
 {
-  "name": "mongoscraper",
+  "name": "news-scraper",
   "version": "1.0.0",
-  "description": "Scrap the content from web pages and store it into the database.",
-  "main": "index.js",
+  "description": "",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/anishdabade/mongo_scraper.git"
+    "url": "git+https://github.com/hornsten/news-scraper.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "hornsten",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/anishdabade/mongo_scraper/issues"
+    "url": "https://github.com/hornsten/news-scraper/issues"
   },
-  "homepage": "https://github.com/anishdabade/mongo_scraper#readme",
+  "homepage": "https://github.com/hornsten/news-scraper#readme",
   "dependencies": {
-    "body-parser": "^1.17.2",
-    "cheerio": "^1.0.0-rc.2",
-    "express": "^4.15.4",
+    "bluebird": "^3.4.7",
+    "body-parser": "^1.16.1",
+    "cheerio": "^0.22.0",
+    "express": "^4.14.1",
     "express-handlebars": "^3.0.0",
-    "mongoose": "^4.11.6",
-    "morgan": "^1.8.2",
-    "request": "^2.81.0"
+    "handlebars": "^4.0.6",
+    "method-override": "^2.3.7",
+    "mongoose": "^4.8.3",
+    "mongoose-deep-populate": "^3.0.0",
+    "request": "^2.79.0"
   }
 }

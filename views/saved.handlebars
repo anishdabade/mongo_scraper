@@ -1,0 +1,86 @@
+<div class="jumbotron">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li>
+            <a href="/">Home<span class="sr-only">(current)</span></a>
+          </li>
+          <li><a href="/saved">Saved Articles</a></li>
+        </ul>
+        <form class="navbar-form navbar-left">
+          <a href="/scraped" class="btn btn-info">Scrape New Articles</a>
+        </form>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+  </nav>
+  <div class="container text-center">
+    <h1 class="shadow fa fa-newspaper-o">The New York Times!</h1>
+    <p class="shadow-lite">Saved Articles</p>
+  </div>
+</div>
+<div class="container">
+  {{#if articles.length}}
+  <div id="length-alert" class="alert alert-info alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>You have {{articles.length}} saved articles.</div>
+  {{else}}
+  <div id="length-alert" class="alert alert-info alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>Try saving some <a href="/scraped" class="alert-link">scraped articles!</a></div>
+  {{/if}} {{#grouped_each 3 articles}}
+  <div class="row">
+    {{#each this}}
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <a target="_blank" href={{this.link}}></a>
+        <div class="caption">
+          <h3>{{this.title}}</h3>
+          <p><a data-button="{{this._id}}" class="btn btn-info comment-btn">Comments</a>
+            <form action="/articles/one/{{this._id}}" method="POST">
+              <input type="hidden" name="id" value="{{this.id}}">
+              <button class="btn btn-yellow" data-loading-text="<i class='fa fa-spinner fa-spin'></i>Deleting" type="submit">Delete</button>
+            </form>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" data-backdrop="static" id="modal-{{this._id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content modal-lg">
+          <div class="modal-header">
+            <h3 class="modal-title" id="myModalLabel">{{this.title}}</h3>
+          </div>
+          <div class="modal-body">
+            <div id="{{this._id}}"></div>
+            <form method="POST" action="/articles/:id">
+              <input type="hidden" name="id" value="{{this._id}}">
+              <br>
+              <input required class="form-control" type="text" placeholder="Username" name="username">
+              <br>
+              <input required class="form-control" type="textarea" placeholder="Comment" name="body">
+              <br>
+              <button id="submit-comment" class="btn btn-info" data-loading-text="<i class='fa fa-spinner fa-spin'></i>Adding Comment" type="submit">Add a comment</button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="close-{{this._id}}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>Closing" class="btn btn-yellow" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/grouped_each}}
+</div>
