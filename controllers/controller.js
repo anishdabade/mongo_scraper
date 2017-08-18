@@ -1,6 +1,6 @@
 var express = require("express");
 var router = express.Router();
-var Article = require("../models/article.js");
+var Article = require("../models/Article.js");
 var Comment = require("../models/comment.js");
 var bodyParser = require("body-parser");
 var methodOverride = require("method-override");
