@@ -12,8 +12,8 @@ var request = require("request");
 // Use native promises
 mongoose.Promise = global.Promise;
 
-if(process.env.NODE_ENV == "production"){
-    mongoose.connect("mongodb://<dbuser>:<dbpassword>@ds149373.mlab.com:49373/heroku_nhwhxmc4")
+if(process.env."mongodb://<dbuser>:<dbpassword>@ds149373.mlab.com:49373/heroku_nhwhxmc4"){
+    mongoose.connect(process.env."mongodb://<dbuser>:<dbpassword>@ds149373.mlab.com:49373/heroku_nhwhxmc4")
 } else{
     mongoose.connect("mongodb://localhost/mongo_scraper");
 }
