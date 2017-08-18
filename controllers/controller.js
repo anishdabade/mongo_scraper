@@ -13,7 +13,7 @@ var request = require("request");
 mongoose.Promise = global.Promise;
 
 if(process.env.NODE_ENV == "production"){
-    mongoose.connect("mongodb://<dbuser>:<dbpassword>@ds149353.mlab.com:49353/heroku_56vlr88t")
+    mongoose.connect("mongodb://<dbuser>:<dbpassword>@ds149373.mlab.com:49373/heroku_nhwhxmc4")
 } else{
     mongoose.connect("mongodb://localhost/mongo_scraper");
 }
