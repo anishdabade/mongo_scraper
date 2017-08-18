@@ -18,7 +18,7 @@ mongoose.Promise = global.Promise;
 //     mongoose.connect("mongodb://localhost/mongo_scraper");
 // }
 
-  mongoose.connect("mongodb://<dbuser>:<dbpassword>@ds149373.mlab.com:49373/heroku_nhwhxmc4");  
+  mongoose.connect("mongodb://heroku_rq94rkwj:dpnf9ehncqiqf6bb9sr9l338fh@ds151153.mlab.com:51153/heroku_rq94rkwj");  
   var db = mongoose.connection;
 
 
