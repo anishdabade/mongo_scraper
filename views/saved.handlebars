@@ -46,7 +46,7 @@
       <div class="thumbnail">
         <a target="_blank" href={{this.link}}></a>
         <div class="caption">
-          <h3>{{this.title}}</h3>
+          <a target="_blank" href={{this.link}}><img src="{{this.image}}" /></a>
           <p><a data-button="{{this._id}}" class="btn btn-info comment-btn">Comments</a>
             <form action="/articles/one/{{this._id}}" method="POST">
               <input type="hidden" name="id" value="{{this.id}}">
